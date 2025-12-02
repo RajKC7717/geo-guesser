@@ -1,0 +1,103 @@
+/* Single Player Page Container */
+.singleplayer-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url("../assets/background.jpeg.jpeg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Title */
+  .singleplayer-title {
+    font-family: "Bagel Fat One", sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 3px 3px 0px black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Logo */
+  .singleplayer-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 40px;
+  }
+  
+  /* IGN Display */
+  .singleplayer-ign {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  
+  /* Buttons */
+  .singleplayer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .game-button {
+    font-family: "Baloo", sans-serif;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    background: #ff8c00;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px black;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .game-button:hover {
+    background: #ff6600;
+    transform: scale(1.05);
+  }
+  
+  /* Back & Settings Buttons */
+  .back-button,
+  .settings-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: 0.2s;
+  }
+  
+  .back-button {
+    right: auto;
+    left: 70px;
+  }
+  
+  .back-icon,
+  .settings-icon {
+    color: white;
+    text-shadow: 2px 2px 4px black;
+  }
+  
+  .back-button:hover .back-icon,
+  .settings-button:hover .settings-icon {
+    color: #ff8c00;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+  

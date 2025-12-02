@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+.dashboard {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/background.jpeg.jpeg"); /* Use the same background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Title */
+  .dashboard-title {
+    font-family: "Bagel Fat One", sans-serif;
+    font-size: 4.9rem;
+    color: white;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 40px;
+    margin-top: -70px;
+  }
+  
+  /* Logo */
+  .dashboard-logo {
+    width: 200px; 
+    margin-bottom: 60px;
+    margin-top: 0px;
+  }
+  
+  /* IGN Display */
+  .dashboard-ign {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 1.4rem; 
+    font-family: "Baloo 2", sans-serif; 
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    padding: 8px 15px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+  
+  /* Buttons */
+  .dashboard-buttons {
+    display: flex;
+    gap: 120px;
+  }
+  
+  .game-button {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: 2px solid rgb(14, 13, 13);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .game-button:first-child {
+    background-color: rgb(20, 183, 20);
+    color: rgb(255, 255, 255);
+  }
+  
+  .game-button:last-child {
+    background-color: rgb(4, 138, 200);
+    color: rgb(255, 255, 255);
+  }
+  
+  .game-button:hover {
+    transform: scale(1.1);
+  }
+  
+/* Back Button */
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: darkblue !important; /* Ensures consistency */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.back-icon {
+  color: white !important; /* Ensures icon color remains white */
+  font-size: 2.6rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.back-button:hover .back-icon {
+  transform: scale(1.1);
+}
+
+/* Settings Button */
+.settings-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: darkblue !important;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.settings-icon {
+  color: white !important; /* Force icon color */
+  font-size: 2.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.settings-button:hover .settings-icon {
+  transform: rotate(360deg);
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>India Street View Collector</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    #results { margin-top: 20px; max-height: 300px; overflow-y: scroll; background: #fff; padding: 10px; border: 1px solid #ccc; }
+    .entry { margin-bottom: 5px; }
+    input[type="number"] { padding: 5px; width: 100px; }
+    button { padding: 5px 10px; margin-left: 5px; }
+    #status { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>India Street View Coordinates Collector</h1>
+  <div>
+    <label for="indexSearch">Search by Index:</label>
+    <input type="number" id="indexSearch" />
+    <button onclick="searchIndex()">Search</button>
+    <p id="searchResult"></p>
+  </div>
+  <div id="status">Starting...</div>
+  <div id="results"></div>
+
+  <script>
+    const API_KEY = 'AIzaSyCWANOa4d1si6Br0idDtgUN4b72rLrlikc'; 
+    const data = [];
+    const coordsSet = new Set();
+    let index = 0;
+
+    function getRandomCoordInIndia() {
+      const lat = 8 + Math.random() * (37 - 8);
+      const lng = 68 + Math.random() * (97 - 68);
+      return { lat: parseFloat(lat.toFixed(6)), lng: parseFloat(lng.toFixed(6)) };
+    }
+
+    async function checkStreetView(lat, lng) {
+      const url = `https://maps.googleapis.com/maps/api/streetview/metadata?location=${lat},${lng}&key=${API_KEY}`;
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        return result.status === "OK";
+      } catch (err) {
+        console.error("Error fetching metadata", err);
+        return false;
+      }
+    }
+
+    function printLatestEntries() {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      data.slice(-10).forEach(obj => {
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.textContent = `Index: ${obj.index}, Lat: ${obj.lat}, Lng: ${obj.lng}`;
+        resultsDiv.appendChild(div);
+      });
+    }
+
+    function searchIndex() {
+      const indexVal = parseInt(document.getElementById("indexSearch").value);
+      const result = data.find(obj => obj.index === indexVal);
+      const resultDiv = document.getElementById("searchResult");
+      if (result) {
+        resultDiv.textContent = `Found: Index ${result.index}, Lat: ${result.lat}, Lng: ${result.lng}`;
+      } else {
+        resultDiv.textContent = "Index not found yet.";
+      }
+    }
+
+    async function sendToDatabase(entry) {
+      try {
+        await fetch('http://localhost:5000/api/dataSet', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(entry)
+        });
+      } catch (error) {
+        console.error('Failed to save to database:', error);
+      }
+    }
+
+    async function startCollecting() {
+      const statusDiv = document.getElementById("status");
+
+      while (data.length < 1000) {
+        const { lat, lng } = getRandomCoordInIndia();
+        const key = `${lat},${lng}`;
+
+        if (coordsSet.has(key)) continue;
+
+        const isValid = await checkStreetView(lat, lng);
+        if (isValid) {
+          const entry = { lat, lng };
+          data.push(entry);
+          coordsSet.add(key);
+          console.log(lat,lng);
+          index++;
+
+          statusDiv.textContent = `Valid locations collected: ${data.length}`;
+          await sendToDatabase(entry);
+
+          if (data.length % 10 === 0) {
+            printLatestEntries();
+          }
+        }
+      }
+
+      statusDiv.textContent = "✅ 10 valid locations collected!";
+    }
+
+    startCollecting();
+  </script>
+</body>
+</html>

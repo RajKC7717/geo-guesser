@@ -1,0 +1,46 @@
+.create-room-container {
+    background: #121212;
+    color: white;
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .room-id {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+  
+  .room-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 200px;
+  }
+  
+  .room-settings label {
+    font-weight: bold;
+  }
+  
+  .room-settings input {
+    padding: 6px;
+    font-size: 16px;
+  }
+  
+  .start-game-button {
+    background: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .start-game-button:hover {
+    background: #1e874b;
+  }
+  

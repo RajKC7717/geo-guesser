@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+2:wght@700&display=swap');
+
+.signup-container {
+  background: url("../assets/background.jpeg.jpeg") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Logo */
+.signup-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 40px;
+  margin-top: -16px;
+}
+
+/* Title */
+.signup-title {
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  margin-top: -10px;
+  margin-bottom: 60px;
+}
+
+/* Panels */
+.signup-panels {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 3px solid darkblue; /* Custom color */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow */
+}
+
+/* Input Fields */
+.input-field {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid gray;
+}
+
+/* IGN Status */
+.ign-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ign-status {
+  font-weight: bold;
+}
+
+.ign-status.available {
+  color: green;
+}
+
+.ign-status.taken {
+  color: red;
+}
+
+/* Social Buttons */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.google {
+  background-color: white;
+  border: 2px solid gray;
+  color: black;
+}
+
+.discord {
+  background-color: #7289da;
+  color: white;
+  border: 2px solid rgb(14, 105, 252);
+}
+
+/* Icons */
+.social-icon {
+  margin-right: 10px;
+}
+
+/* Sign Up Button */
+.signup-button {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: 2px solid gray;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 39%;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* When all fields are valid, button appears */
+.signup-button.visible {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+/* Hover effect */
+.signup-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: darkblue;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.back-icon {
+  color: white;
+  font-size: 2.6rem;
+}
+
+.back-button:hover .back-icon {
+  transform: scale(1.1);
+}
+
+/* Settings Button */
+.settings-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

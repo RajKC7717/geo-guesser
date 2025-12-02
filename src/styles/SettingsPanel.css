@@ -1,0 +1,68 @@
+.settings-panel {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    width: 180px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    animation: dropUp 0.3s ease-out forwards;
+  }
+  
+  @keyframes dropUp {
+    from {
+      transform: translate(50px, 50px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 5;
+    }
+  }
+  
+  .settings-title {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px ;
+  }
+  
+  .settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .settings-option label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .settings-option select {
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 3px solid #333;
+  }
+  
+  .sound-toggle {
+    background: black;
+    color: white;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sound-toggle:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+  }
+  

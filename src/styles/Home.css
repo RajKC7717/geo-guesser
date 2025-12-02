@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+2:wght@700&display=swap');
+
+/* Background Image */
+.home-container {
+  background: url("../assets/background.jpeg.jpeg") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Title */
+.title {
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 7rem;
+  color: white;
+  text-shadow: 3.7px 3.7px 5.7px black;
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 200px;
+  height: auto;
+  margin: 50px 0;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  gap: 69px;
+}
+
+.button {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 14px 21px;
+  border-radius: 19px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sign Up & Login Buttons */
+.signup, .login {
+  background-color: lightgreen;
+  border: 2px solid darkgreen;
+  color: rgb(0, 0, 0);
+}
+
+.signup:hover, .login:hover {
+  background-color: darkgreen;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Guest Mode Button */
+.guest {
+  background-color: cyan;
+  border: 2px solid darkblue;
+  color: black;
+}
+
+.guest:hover {
+  background-color: darkblue;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Settings Button */
+.settings-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: darkblue;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.settings-icon {
+  color: white;
+  font-size: 2.8rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.settings-button:hover .settings-icon {
+  transform: rotate(360deg);
+}
+
+/* Settings Panel Animation */
+.settings-panel {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: dropUp 0.3s ease-in-out;
+}
+
+/* Drop Up Animation */
+@keyframes dropUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Settings Options */
+.settings-option {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.settings-toggle {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  background: darkblue;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.settings-toggle:hover {
+  background: navy;
+}

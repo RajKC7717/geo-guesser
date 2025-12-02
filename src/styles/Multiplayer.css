@@ -1,0 +1,65 @@
+.multiplayer-page {
+  width: 100vw;
+    height: 100vh;
+    background-image: url('bg_for_multiplayer.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+  }
+  
+  .multiplayer-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #1e90ff;
+  }
+  
+  .multiplayer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .multiplayer-buttons button {
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .multiplayer-buttons button:nth-child(1) {
+    background: linear-gradient(145deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 15px #1e90ff;
+  }
+  
+  .multiplayer-buttons button:nth-child(2) {
+    background: linear-gradient(145deg, #1e90ff, #00bfff); 
+    box-shadow: 0 0 15px #1e90ff;
+  }
+  
+  .multiplayer-buttons button:nth-child(3) {
+    background: linear-gradient(145deg, #1e90ff, #00bfff); 
+    box-shadow: 0 0 15px #1e90ff;
+  }
+  
+  .multiplayer-page .multiplayer-buttons button:hover {
+    background: linear-gradient(145deg, #e53935, #d32f2f); /* red hover only here */
+     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.6);
+  }
+  

@@ -1,0 +1,115 @@
+/* leaderboard.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: url('bg_for_multiplayer.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .leaderboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .leaderboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .leaderboard-header h1 {
+    font-size: 36px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .leaderboard-header p {
+    font-size: 18px;
+    color: #ccc;
+  }
+  
+  .leaderboard-table {
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table-header {
+    display: flex;
+    background-color: #444;
+    font-weight: bold;
+  }
+  
+  .table-cell {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    border-right: 1px solid #555;
+  }
+  
+  .table-cell:last-child {
+    border-right: none;
+  }
+  
+  .table-header .table-cell {
+    background-color: #666;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .table-body .table-row {
+    display: flex;
+    background-color: #222;
+    border-bottom: 1px solid #555;
+  }
+  
+  .table-body .table-row:hover {
+    background-color: #444;
+  }
+  
+  .table-row .table-cell {
+    color: #ccc;
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .table-row .table-cell:first-child {
+    color: #ffcc00;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .table-row .table-cell:nth-child(2) {
+    font-weight: bold;
+  }
+  
+  .table-body .table-row:last-child {
+    border-bottom: none;
+  }
+  
+  .table-body .table-row .table-cell {
+    border-right: 1px solid #444;
+  }
+  
+  .table-body .table-row .table-cell:last-child {
+    border-right: none;
+  }
+  
